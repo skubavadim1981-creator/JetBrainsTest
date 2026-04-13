@@ -1,21 +1,25 @@
 package com.example.jetbrainstest.pages;
 
+import com.example.jetbrainstest.tests.DatabaoTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 // page_url = https://www.jetbrains.com/databao/
 public class DatabaoPage {
 
+    private final Logger LOG = LoggerFactory.getLogger(DatabaoPage.class);
     WebDriver driver;
 
     @FindBy(css = "a[data-test='button'][href='/databao/get-in-touch/']")
     private WebElement bookademoButton;
 
     public Boolean checkIfBookaademoButtonIsClickable() {
-        System.out.println("Проверка активности кнопки загрузки");
+        LOG.info("Проверка активности кнопки загрузки");
         return bookademoButton.isEnabled();
     }
 
@@ -28,12 +32,12 @@ public class DatabaoPage {
     private WebElement demoRequestForm;
 
     public Boolean checkIfDemoRequestFormIsDisplayed () {
-        System.out.println("Проверка видимости формы бронирования презентации продукта");
+        LOG.info("Проверка видимости формы бронирования презентации продукта");
         return demoRequestForm.isDisplayed();
     }
 
     public void clickBookADemoButton() {
-        System.out.println("Клик по кнопке бронирования презентации");
+        LOG.info("Клик по кнопке бронирования презентации");
         bookademoButton.click();
     }
 }
