@@ -22,7 +22,7 @@ public class DatabaoPage {
     private WebElement bookademoButton;
 
     public Boolean checkIfBookaademoButtonIsClickable() {
-        LOG.info("Проверка активности кнопки загрузки");
+        LOG.infoWithScreenshot("Проверка активности кнопки загрузки");
         return bookademoButton.isEnabled();
     }
 
@@ -35,12 +35,12 @@ public class DatabaoPage {
     private WebElement demoRequestForm;
 
     public Boolean checkIfDemoRequestFormIsDisplayed () {
-        LOG.info("Проверка видимости формы бронирования презентации продукта");
+        LOG.infoWithScreenshot("Проверка видимости формы бронирования презентации продукта");
         return demoRequestForm.isDisplayed();
     }
 
     public void clickBookADemoButton() {
-        LOG.info("Клик по кнопке бронирования презентации");
+        LOG.infoWithScreenshot("Клик по кнопке бронирования презентации");
         bookademoButton.click();
     }
 }
