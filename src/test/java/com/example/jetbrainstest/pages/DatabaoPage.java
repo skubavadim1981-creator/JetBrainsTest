@@ -1,6 +1,7 @@
 package com.example.jetbrainstest.pages;
 
 import com.example.jetbrainstest.tests.DatabaoTest;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +19,7 @@ public class DatabaoPage {
     @FindBy(css = "a[data-test='button'][href='/databao/get-in-touch/']")
     private WebElement bookademoButton;
 
+    @Step("Проверка активности кнопки загрузки")
     public Boolean checkIfBookaademoButtonIsClickable() {
         LOG.info("Проверка активности кнопки загрузки");
         return bookademoButton.isEnabled();
@@ -31,11 +33,13 @@ public class DatabaoPage {
     @FindBy (css ="form[data-test='wtform']")
     private WebElement demoRequestForm;
 
+    @Step("Проверка видимости формы бронирования презентации продукта")
     public Boolean checkIfDemoRequestFormIsDisplayed () {
         LOG.info("Проверка видимости формы бронирования презентации продукта");
         return demoRequestForm.isDisplayed();
     }
 
+    @Step("Клик по кнопке бронирования презентации")
     public void clickBookADemoButton() {
         LOG.info("Клик по кнопке бронирования презентации");
         bookademoButton.click();
