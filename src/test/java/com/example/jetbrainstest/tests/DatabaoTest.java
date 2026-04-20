@@ -15,7 +15,7 @@ public class DatabaoTest extends BaseTest {
 
     @BeforeEach
     @Override
-    @Step("Переход в раздел idea")
+    @Step("Переход в раздел Idea")
     public void setUp() {
         super.setUp();
         getDriver().get("https://www.jetbrains.com/databao/");
