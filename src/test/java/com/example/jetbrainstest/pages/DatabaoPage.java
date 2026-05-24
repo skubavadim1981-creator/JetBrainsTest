@@ -18,29 +18,37 @@ public class DatabaoPage {
    // private final Logger LOG = LoggerFactory.getLogger(DatabaoPage.class);
     WebDriver driver;
 
-    @FindBy(css = "a[data-test='button'][href='/databao/get-in-touch/']")
-    private WebElement bookademoButton;
-
-    public Boolean checkIfBookaademoButtonIsClickable() {
-        LOG.infoWithScreenshot("Проверка активности кнопки загрузки");
-        return bookademoButton.isEnabled();
-    }
-
     public DatabaoPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (css ="form[data-test='wtform']")
-    private WebElement demoRequestForm;
+    @FindBy(css = "a[data-test='button'][href='/databao/get-in-touch/']")
+    private WebElement bookademoButton;
+    @FindBy(xpath = "//a[contains(@href,'how-databao-agent-ranked-1-spider-2-0-dbt')]")
+    private WebElement rankLink;
+    @FindBy(css = "[data-test='tag']")
+    private WebElement jetBrainsForDataTag;
 
-    public Boolean checkIfDemoRequestFormIsDisplayed () {
-        LOG.infoWithScreenshot("Проверка видимости формы бронирования презентации продукта");
-        return demoRequestForm.isDisplayed();
+
+    public Boolean checkIfBookaademoButtonIsClickable() {
+        LOG.infoWithScreenshot("Проверка активности кнопки загрузки");
+        return bookademoButton.isEnabled();
     }
-
     public void clickBookADemoButton() {
         LOG.infoWithScreenshot("Клик по кнопке бронирования презентации");
         bookademoButton.click();
+    }
+    public Boolean checkIfRankLinkIsClickable() {
+        LOG.infoWithScreenshot("Проверка активности ссылки достижений");
+        return rankLink.isEnabled();
+    }
+    public void clickRankLink() {
+        LOG.infoWithScreenshot("Клик по ссылке достижений");
+        rankLink.click();
+    }
+    public void clickJetbrainsForDataTag() {
+        LOG.infoWithScreenshot("Клик по тэгу 'Jetbrains for data'");
+        jetBrainsForDataTag.click();
     }
 }
